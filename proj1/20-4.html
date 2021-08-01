@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>XMLHttpRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        function createRequest() {
+            var request;
+            try {
+                request = new XMLHttpRequest();
+            } catch (exception) {
+                try {
+                    request = new ActiveXObject('Msxml2.HMLHTTP');
+                } catch (innerException) {
+                    request = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+            }
+            return request;
+        }
+        
+        var request = createRequest(); // 객체 생성
+        request.onreadystatechange = function (event) { // 데이터가 배달된 것을 알려줌
+            alert(request.readyState);
+            }
+        request.open('GET', '/data.html', true); // ( 프로토콜, 경로, 비동기 여부 )
+        // 동기 : 반응이 일어나지 않음 
+        // -> 비동기로 변경
+        // -> jquery Ajax로 변경 (프로젝트)
+
+        request.send();
+
+        // 출력은 이렇게
+        document.body.innerHTML += request.responseText;
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,77 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 300;
+}
+
+.inner_container {
+    height: 750px;
+    width: 600px;
+}
+
+.movies {
+  text-align: center;
+}
+
+.movie_img {
+  width: 120px;
+  float: left;
+}
+
+.movie_btn {
+    margin: 5px;
+    width: 50px;
+    background-color: rgb(35,184,208);
+    color: white;
+    border-radius: 5px;
+}
+
+.boards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 50px;
+  padding-top: 70px;
+  width: 85%;
+}
+
+.input_search {
+    height: 50px;
+    background-color: rgb(73,80,90);
+    color: rgb(188,189,196);
+    width: 90%;
+    padding: 0;
+    padding-left: 5px;
+    border-width: 0;
+    font-size: 20px;
+}
+
+.plus_box {
+    color: white;
+    background-color: gray;
+    margin: 0px;
+    width: 10%;
+    text-align: center;
+    font-size: 30px;
+}
+
+.input_div {
+  text-align: center;
+}
+
+.input_title {
+    background-color:rgb(35,184,208);
+    color: white;
+    margin: 0px;
+    padding: 20px;
+}

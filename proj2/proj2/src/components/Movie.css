@@ -1,0 +1,18 @@
+.movie {
+  text-align: center;
+  display: inline-block;
+}
+
+.movie_poster {
+  margin-top: 40px;
+  width: 200px;
+}
+
+.inner {
+  width: 350px;
+  text-align: left;
+}
+
+.tr {
+  font-weight: bold;
+}

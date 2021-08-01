@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JsonRequest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        function createRequest() {
+            var request;
+            try {
+                request = new XMLHttpRequest();
+            } catch (exception) {
+                try {
+                    request = new ActiveXObject('Msxml2.HMLHTTP');
+                } catch (innerException) {
+                    request = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+            }
+            return request;
+        }
+        
+        var request = createRequest(); // 객체 생성
+        request.onreadystatechange = function (event) { // 데이터가 배달된 것을 알려줌
+            if (request.readyState == 4) {
+                if (request.status == 200) { // 정상일 때
+                    // json 객체를 문자열로 변환
+                    var json = eval('('+request.responseText+')');
+                    var outoput = '';
+
+                    for (var i=0; i<json.length; i++) {
+                        for (var key in json[i]) {
+                            output += '<h1>'+i+':'+json[i][key]+'</h1>';
+                        }
+                    }
+
+                    document.body.innerHTML += output;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
